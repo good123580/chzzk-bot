@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "치지직 방송 알림",
+  "version": "1.1",
+  "description": "치지직 방송 시작을 감시하고 알림을 보냅니다.",
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "치지직 방송 상태 확인"
+  },
+
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "permissions": [
+    "notifications",
+    "storage",
+    "scripting",
+    "alarms"
+  ],
+
+  "host_permissions": [
+    "https://api.chzzk.naver.com/*",
+    "https://chzzk.naver.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://chzzk.naver.com/*"],
+      "js": ["log.js","content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["default_icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>치지직 채널 슬라이드</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  
+
+  <section>
+    <h3>📺 알람 채널</h3>
+    <input type="text" id="searchInput" placeholder="채널 이름 검색" />
+    <div id="statusContainer">
+        </div>
+  </section>
+
+
+
+<section id="channelSection">
+  <button id="toggleSectionBtn" aria-expanded="false" aria-controls="channelContent">채널 설정</button>
+  <div id="channelContent" class="collapsed">
+    <h3>➕ 채널 추가</h3>
+    <input type="text" id="channelIdInput" placeholder="채널 ID 입력" />
+    <input type="text" id="channelNameInput" placeholder="채널 이름 입력" />
+    <button id="addBtn">채널 추가</button>
+    <label for="toggleNotification">
+      <input type="checkbox" id="toggleNotification" />
+      전체 방송 알림 받기
+    </label>
+  </div>
+</section>
+
+  
+
+  
+  <script src="popup.js"></script>
+</body>
+</html>
