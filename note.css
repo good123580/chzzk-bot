@@ -1,0 +1,166 @@
+/* 치지직 스타일 테마 */
+:root {
+  --chzzk-bg-dark: #181818;
+  --chzzk-bg-medium: #282828;
+  --chzzk-primary-green: #00ffa3;
+  --chzzk-text-light: #e6e6e6;
+  --chzzk-border-dark: #383838;
+}
+
+/* 전체 페이지 배경을 어두운 색으로, 글자 색은 밝게 변경 */
+body {
+  margin: 0;
+  padding: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: var(--chzzk-bg-dark);
+  color: var(--chzzk-text-light);
+}
+
+/* 텍스트 입력창 배경과 테두리를 어둡게 변경 */
+textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  font-size: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: var(--chzzk-bg-medium);
+  color: var(--chzzk-text-light);
+  border: 1px solid var(--chzzk-border-dark);
+  border-radius: 6px;
+}
+
+/* 버튼 색상을 치지직의 초록색으로 변경하고, 호버 효과 추가 */
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--chzzk-primary-green);
+  color: #121212;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #00e092;
+}
+
+#memoList {
+  margin-top: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 5px; /* 스크롤바와 내용 사이 여백 */
+}
+
+/* 메모 항목의 구분선을 어둡게 변경 */
+.memo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--chzzk-border-dark);
+  align-items: center;
+  cursor: default;
+}
+
+.memo-item:last-child {
+  border-bottom: none;
+}
+
+.memo-text {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.memo-text:hover {
+  color: var(--chzzk-primary-green);
+}
+
+.delete-btn {
+  background: transparent;          /* 배경 제거 */
+  border: none;                     /* 테두리 제거 */
+  color: #ff4747;                   /* 붉은색 아이콘 */
+  font-size: 16px;
+  padding: 2px;
+  width: auto;                      /* 버튼 너비 자동 조절 */
+  height: auto;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: #e03b3b;
+}
+
+.delete-btn:hover {
+  background-color: #e03b3b;
+}
+
+/* 토스트 메시지 스타일 변경 */
+#toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(40, 40, 40, 0.9);
+  color: var(--chzzk-text-light);
+  padding: 10px 20px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#toast.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Webkit 기반 브라우저용 스크롤바 디자인 */
+/* 전체 스크롤바의 너비/높이 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* 스크롤바의 배경 (트랙) */
+::-webkit-scrollbar-track {
+  background-color: var(--chzzk-bg-medium);
+  border-radius: 10px;
+}
+
+/* 스크롤바의 손잡이 (드래그하는 부분) */
+::-webkit-scrollbar-thumb {
+  background-color: var(--chzzk-border-dark);
+  border-radius: 10px;
+}
+
+/* 스크롤바 손잡이에 마우스를 올렸을 때 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--chzzk-primary-green);
+}
+
+/* Firefox 브라우저용 스크롤바 (심플 버전) */
+/* Firefox는 Webkit과 다른 속성을 사용합니다. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--chzzk-border-dark) var(--chzzk-bg-medium);
+}
+
+
+.memo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--chzzk-border-dark);
+}
